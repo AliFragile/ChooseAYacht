@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1CE0502967663E00D08A42 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */; };
 		1F88848A2971CFBC002931A3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8884892971CFBC002931A3 /* SplashViewController.swift */; };
 		1F9176C029524C810063330B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176BF29524C810063330B /* AppDelegate.swift */; };
 		1F9176C229524C810063330B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176C129524C810063330B /* SceneDelegate.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		1F8884892971CFBC002931A3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		1F9176BC29524C810063330B /* ChooseAYacht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChooseAYacht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9176BF29524C810063330B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				1F8884892971CFBC002931A3 /* SplashViewController.swift */,
-				1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -201,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9176C429524C810063330B /* MainViewController.swift in Sources */,
-				1F1CE0502967663E00D08A42 /* SplashPresenter.swift in Sources */,
 				1F9176C029524C810063330B /* AppDelegate.swift in Sources */,
 				1F9176C229524C810063330B /* SceneDelegate.swift in Sources */,
 				1F88848A2971CFBC002931A3 /* SplashViewController.swift in Sources */,

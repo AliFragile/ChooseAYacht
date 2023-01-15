@@ -39,6 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hS2-Eo-gL2"/>
                     <connections>
+                        <outlet property="beachImageView" destination="YKD-WL-jyb" id="cTU-6Q-Lzm"/>
                         <outlet property="textImageView" destination="niW-pp-keL" id="X73-2P-Bsy"/>
                         <outlet property="yachtImageView" destination="odv-Tl-Syi" id="GFv-zd-WQT"/>
                         <segue destination="Nm6-bU-9ys" kind="show" id="gYd-rX-hTS"/>

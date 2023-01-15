@@ -11,18 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //var - тк потом удаляем, чтобы не висело в памяти
-    private var splashPresenter: SplashPresenterDescription? = SplashPresenter()
+    //private var splashPresenter: SplashPresenterDescription? = SplashPresenter()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        splashPresenter?.present()
+       // splashPresenter?.present()
 
         //перед тем как убрать splashPresenter должны быть задержка, например, в 2 сек
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.splashPresenter?.dismiss(completion:  { [weak self] in
-                self?.splashPresenter = nil
-            })
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+//            self.splashPresenter?.dismiss(completion:  { [weak self] in
+//                self?.splashPresenter = nil
+//            })
+//        }
         return true
     }
 
