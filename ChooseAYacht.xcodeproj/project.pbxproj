@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1CE0502967663E00D08A42 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */; };
+		1F88848A2971CFBC002931A3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8884892971CFBC002931A3 /* SplashViewController.swift */; };
 		1F9176C029524C810063330B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176BF29524C810063330B /* AppDelegate.swift */; };
 		1F9176C229524C810063330B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176C129524C810063330B /* SceneDelegate.swift */; };
-		1F9176C429524C810063330B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176C329524C810063330B /* ViewController.swift */; };
+		1F9176C429524C810063330B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9176C329524C810063330B /* MainViewController.swift */; };
 		1F9176C729524C810063330B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C529524C810063330B /* Main.storyboard */; };
 		1F9176C929524C820063330B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C829524C820063330B /* Assets.xcassets */; };
 		1F9176CC29524C820063330B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176CA29524C820063330B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F9176BC29524C810063330B /* YachtsChooseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YachtsChooseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		1F8884892971CFBC002931A3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1F9176BC29524C810063330B /* ChooseAYacht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChooseAYacht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9176BF29524C810063330B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9176C129524C810063330B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F9176C329524C810063330B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F9176C329524C810063330B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1F9176C629524C810063330B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F9176C829524C820063330B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9176CB29524C820063330B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,10 +41,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F88848B2971EACF002931A3 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1F8884892971CFBC002931A3 /* SplashViewController.swift */,
+				1F1CE04F2967663E00D08A42 /* SplashPresenter.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		1F9176B329524C810063330B = {
 			isa = PBXGroup;
 			children = (
-				1F9176BE29524C810063330B /* YachtsChooseProject */,
+				1F9176BE29524C810063330B /* ChooseAYacht */,
 				1F9176BD29524C810063330B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +61,80 @@
 		1F9176BD29524C810063330B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1F9176BC29524C810063330B /* YachtsChooseProject.app */,
+				1F9176BC29524C810063330B /* ChooseAYacht.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1F9176BE29524C810063330B /* YachtsChooseProject */ = {
+		1F9176BE29524C810063330B /* ChooseAYacht */ = {
+			isa = PBXGroup;
+			children = (
+				1F88848B2971EACF002931A3 /* Splash */,
+				1F9176D329524C9C0063330B /* MainViewController */,
+				1F9176D529524D360063330B /* Models */,
+				1F9176D629524D4B0063330B /* Helpers */,
+				1F9176D729524D570063330B /* Storyboards */,
+				1F9176D829524D840063330B /* Resources */,
+				1F9176D429524CB50063330B /* App */,
+				1F9176CD29524C820063330B /* Info.plist */,
+			);
+			path = ChooseAYacht;
+			sourceTree = "<group>";
+		};
+		1F9176D329524C9C0063330B /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F9176C329524C810063330B /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		1F9176D429524CB50063330B /* App */ = {
 			isa = PBXGroup;
 			children = (
 				1F9176BF29524C810063330B /* AppDelegate.swift */,
 				1F9176C129524C810063330B /* SceneDelegate.swift */,
-				1F9176C329524C810063330B /* ViewController.swift */,
-				1F9176C529524C810063330B /* Main.storyboard */,
-				1F9176C829524C820063330B /* Assets.xcassets */,
-				1F9176CA29524C820063330B /* LaunchScreen.storyboard */,
-				1F9176CD29524C820063330B /* Info.plist */,
 			);
-			path = YachtsChooseProject;
+			path = App;
+			sourceTree = "<group>";
+		};
+		1F9176D529524D360063330B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F9176D629524D4B0063330B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1F9176D729524D570063330B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1F9176CA29524C820063330B /* LaunchScreen.storyboard */,
+				1F9176C529524C810063330B /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1F9176D829524D840063330B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F9176C829524C820063330B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1F9176BB29524C810063330B /* YachtsChooseProject */ = {
+		1F9176BB29524C810063330B /* ChooseAYacht */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1F9176D029524C820063330B /* Build configuration list for PBXNativeTarget "YachtsChooseProject" */;
+			buildConfigurationList = 1F9176D029524C820063330B /* Build configuration list for PBXNativeTarget "ChooseAYacht" */;
 			buildPhases = (
 				1F9176B829524C810063330B /* Sources */,
 				1F9176B929524C810063330B /* Frameworks */,
@@ -82,9 +144,9 @@
 			);
 			dependencies = (
 			);
-			name = YachtsChooseProject;
+			name = ChooseAYacht;
 			productName = YachtsChooseProject;
-			productReference = 1F9176BC29524C810063330B /* YachtsChooseProject.app */;
+			productReference = 1F9176BC29524C810063330B /* ChooseAYacht.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1F9176B729524C810063330B /* Build configuration list for PBXProject "YachtsChooseProject" */;
+			buildConfigurationList = 1F9176B729524C810063330B /* Build configuration list for PBXProject "ChooseAYacht" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1F9176BB29524C810063330B /* YachtsChooseProject */,
+				1F9176BB29524C810063330B /* ChooseAYacht */,
 			);
 		};
 /* End PBXProject section */
@@ -138,9 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9176C429524C810063330B /* ViewController.swift in Sources */,
+				1F9176C429524C810063330B /* MainViewController.swift in Sources */,
+				1F1CE0502967663E00D08A42 /* SplashPresenter.swift in Sources */,
 				1F9176C029524C810063330B /* AppDelegate.swift in Sources */,
 				1F9176C229524C810063330B /* SceneDelegate.swift in Sources */,
+				1F88848A2971CFBC002931A3 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHX7XMX27C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YachtsChooseProject/Info.plist;
+				INFOPLIST_FILE = ChooseAYacht/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -300,7 +364,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AR.YachtsChooseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = AR.ChooseAYacht;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHX7XMX27C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YachtsChooseProject/Info.plist;
+				INFOPLIST_FILE = ChooseAYacht/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AR.YachtsChooseProject;
+				PRODUCT_BUNDLE_IDENTIFIER = AR.ChooseAYacht;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +403,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F9176B729524C810063330B /* Build configuration list for PBXProject "YachtsChooseProject" */ = {
+		1F9176B729524C810063330B /* Build configuration list for PBXProject "ChooseAYacht" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F9176CE29524C820063330B /* Debug */,
@@ -348,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1F9176D029524C820063330B /* Build configuration list for PBXNativeTarget "YachtsChooseProject" */ = {
+		1F9176D029524C820063330B /* Build configuration list for PBXNativeTarget "ChooseAYacht" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F9176D129524C820063330B /* Debug */,

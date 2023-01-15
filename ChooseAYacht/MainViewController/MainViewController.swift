@@ -1,13 +1,13 @@
 //
 //  ViewController.swift
-//  YachtsChooseProject
+//  ChooseAYacht
 //
 //  Created by Алина Ражева on 20.12.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
