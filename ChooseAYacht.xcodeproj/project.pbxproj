@@ -14,6 +14,9 @@
 		1F9176C729524C810063330B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C529524C810063330B /* Main.storyboard */; };
 		1F9176C929524C820063330B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C829524C820063330B /* Assets.xcassets */; };
 		1F9176CC29524C820063330B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176CA29524C820063330B /* LaunchScreen.storyboard */; };
+		1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F62974B736003CD08A /* YachtViewController.swift */; };
+		1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F82974B76A003CD08A /* JetskiViewController.swift */; };
+		1FEA37FB2974B779003CD08A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37FA2974B779003CD08A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		1F9176C829524C820063330B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9176CB29524C820063330B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9176CD29524C820063330B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEA37F62974B736003CD08A /* YachtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtViewController.swift; sourceTree = "<group>"; };
+		1FEA37F82974B76A003CD08A /* JetskiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetskiViewController.swift; sourceTree = "<group>"; };
+		1FEA37FA2974B779003CD08A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			children = (
 				1F88848B2971EACF002931A3 /* Splash */,
 				1F9176D329524C9C0063330B /* MainViewController */,
+				1FEA37F52974B718003CD08A /* ViewControllers */,
 				1F9176D529524D360063330B /* Models */,
 				1F9176D629524D4B0063330B /* Helpers */,
 				1F9176D729524D570063330B /* Storyboards */,
@@ -124,6 +131,16 @@
 				1F9176C829524C820063330B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1FEA37F52974B718003CD08A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FEA37F62974B736003CD08A /* YachtViewController.swift */,
+				1FEA37F82974B76A003CD08A /* JetskiViewController.swift */,
+				1FEA37FA2974B779003CD08A /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */,
 				1F9176C429524C810063330B /* MainViewController.swift in Sources */,
 				1F9176C029524C810063330B /* AppDelegate.swift in Sources */,
 				1F9176C229524C810063330B /* SceneDelegate.swift in Sources */,
+				1FEA37FB2974B779003CD08A /* DetailViewController.swift in Sources */,
 				1F88848A2971CFBC002931A3 /* SplashViewController.swift in Sources */,
+				1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

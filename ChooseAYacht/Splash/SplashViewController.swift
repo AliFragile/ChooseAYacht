@@ -9,21 +9,12 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
-    @IBOutlet var beachImageView: UIImageView!
     @IBOutlet var yachtImageView: UIImageView!
     @IBOutlet var textImageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         animate()
-//        DispatchQueue.main.asyncAfter(deadline: .now() , execute: {
-//            self.animate()
-//        })
     }
     
     private func animate() {
@@ -42,13 +33,23 @@ final class SplashViewController: UIViewController {
         }, completion: { done in
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    let viewController = MainViewController()
-                    viewController.modalTransitionStyle = .crossDissolve
-                    viewController.modalPresentationStyle = .fullScreen
-                    self.present(viewController, animated: true)
+                    //self.performSegue(withIdentifier: "ShowMainVC", sender: nil)
+
+                    guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") else { return }
+                    newViewController.modalTransitionStyle = .crossDissolve
+                    newViewController.modalPresentationStyle = .fullScreen
+                    self.show(newViewController, sender: nil)
+                    
+                    
                 })
             }
         })
     }
-    
 }
+
+/*
+ let viewController = MainViewController()
+                    viewController.modalTransitionStyle = .crossDissolve
+                    viewController.modalPresentationStyle = .fullScreen
+                    self.present(viewController, animated: true)
+ */
