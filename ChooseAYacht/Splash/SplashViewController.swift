@@ -33,23 +33,14 @@ final class SplashViewController: UIViewController {
         }, completion: { done in
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.performSegue(withIdentifier: "ShowMainVC", sender: nil)
+                    //self.performSegue(withIdentifier: "ShowYachtVC", sender: nil)
 
-                    guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") else { return }
+                    guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarID") else { return }
                     newViewController.modalTransitionStyle = .crossDissolve
                     newViewController.modalPresentationStyle = .fullScreen
                     self.show(newViewController, sender: nil)
-                    
-                    
                 })
             }
         })
     }
 }
-
-/*
- let viewController = MainViewController()
-                    viewController.modalTransitionStyle = .crossDissolve
-                    viewController.modalPresentationStyle = .fullScreen
-                    self.present(viewController, animated: true)
- */
