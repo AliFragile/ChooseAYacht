@@ -10,7 +10,7 @@ import UIKit
 
 class YachtViewController: UITableViewController {
 
-    private let jsonUrl = "https://drive.google.com/file/d/1OOL7EAxn62O79qPo-TaSWp_uRwWI04x3/view?usp=share_link"
+    private let jsonUrl = "https://drive.google.com/file/d/1tbuaxHGbXpr1ENDB317zZz1E1IZDKjTb/view?usp=share_link"
     
     private var selectedYacht: Yachts!
     private var yachts: [Yachts] = []

@@ -18,14 +18,38 @@ class YachtDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+/*
+ class DetailViewController: UIViewController {
+
+     var trip: Trips!
+
+     @IBOutlet var image: UIImageView!
+     @IBOutlet var titleLabel: UILabel!
+     @IBOutlet var priceLabel: UILabel!
+     @IBOutlet var descriptionLabel: UILabel!
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         
+         titleLabel.text = trip.name
+         priceLabel.text =  trip.price
+         descriptionLabel.text = trip.description
+        
+         displayImage(for: trip)
+     }
+     
+     private func displayImage(for trip: Trips) {
+         
+         let imagePath = trip.imageUrl
+         guard let imageUrl = URL(string: "\(imagePath)") else { return }
+         guard let imageData = try? Data(contentsOf: imageUrl) else { return }
+         
+         image.image = UIImage(data: imageData)
+     }
+
+ }
+ */

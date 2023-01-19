@@ -9,8 +9,8 @@ import Foundation
 
 struct Yachts: Decodable {
     let name: String
-    let imageUrl: String
-    let price: String
+    let imageUrl: [String]
+    let price: [String]
     let description: String
     let typeOfBoat: String
     let capacity: String

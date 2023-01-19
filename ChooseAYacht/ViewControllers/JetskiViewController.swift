@@ -10,7 +10,7 @@ import UIKit
 
 class JetskiViewController: UITableViewController {
 
-    private let jsonUrl = "https://drive.google.com/file/d/1OOL7EAxn62O79qPo-TaSWp_uRwWI04x3/view?usp=share_link"
+    private let jsonUrl = "https://drive.google.com/file/d/1HPRx-N53FAJ3zV2BwXY2uK84iYy7pIuC/view?usp=share_link"
     
     private var selectedJetski: Jetskis!
     private var jetskis: [Jetskis] = []

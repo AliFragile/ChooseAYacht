@@ -9,8 +9,8 @@ import Foundation
 
 struct Jetskis: Decodable {
     let name: String
-    let imageUrl: String
-    let price: String
+    let imageUrl: [String]
+    let price: [String]
     let description: String
     let features: String
     let charterActivityOptions: String
