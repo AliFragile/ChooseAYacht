@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F62974B736003CD08A /* YachtViewController.swift */; };
 		1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F82974B76A003CD08A /* JetskiViewController.swift */; };
 		1FEA37FB2974B779003CD08A /* YachtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */; };
+		58D0A0779678252F86EDD615 /* Pods_ChooseAYacht.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FB6012CE75A2FBFAB6E396 /* Pods_ChooseAYacht.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		1FEA37F62974B736003CD08A /* YachtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtViewController.swift; sourceTree = "<group>"; };
 		1FEA37F82974B76A003CD08A /* JetskiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetskiViewController.swift; sourceTree = "<group>"; };
 		1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtDetailViewController.swift; sourceTree = "<group>"; };
+		38FB6012CE75A2FBFAB6E396 /* Pods_ChooseAYacht.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChooseAYacht.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C71C64893FBD5589C7B27B /* Pods-ChooseAYacht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooseAYacht.debug.xcconfig"; path = "Target Support Files/Pods-ChooseAYacht/Pods-ChooseAYacht.debug.xcconfig"; sourceTree = "<group>"; };
+		A67FF93A5ED85CDE116DAD8D /* Pods-ChooseAYacht.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooseAYacht.release.xcconfig"; path = "Target Support Files/Pods-ChooseAYacht/Pods-ChooseAYacht.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D0A0779678252F86EDD615 /* Pods_ChooseAYacht.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 			children = (
 				1F9176BE29524C810063330B /* ChooseAYacht */,
 				1F9176BD29524C810063330B /* Products */,
+				954C7B2F6C2CBDA02DDCFDC0 /* Pods */,
+				417AC1224C7C1E02FBCC94AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +154,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		417AC1224C7C1E02FBCC94AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38FB6012CE75A2FBFAB6E396 /* Pods_ChooseAYacht.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		954C7B2F6C2CBDA02DDCFDC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71C71C64893FBD5589C7B27B /* Pods-ChooseAYacht.debug.xcconfig */,
+				A67FF93A5ED85CDE116DAD8D /* Pods-ChooseAYacht.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F9176D029524C820063330B /* Build configuration list for PBXNativeTarget "ChooseAYacht" */;
 			buildPhases = (
+				A39988BCB8B25A755F7D0093 /* [CP] Check Pods Manifest.lock */,
 				1F9176B829524C810063330B /* Sources */,
 				1F9176B929524C810063330B /* Frameworks */,
 				1F9176BA29524C810063330B /* Resources */,
+				8D966C4E5A9AACAB8170E8F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +239,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D966C4E5A9AACAB8170E8F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChooseAYacht/Pods-ChooseAYacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChooseAYacht/Pods-ChooseAYacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChooseAYacht/Pods-ChooseAYacht-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A39988BCB8B25A755F7D0093 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChooseAYacht-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F9176B829524C810063330B /* Sources */ = {
@@ -370,6 +439,7 @@
 		};
 		1F9176D129524C820063330B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C71C64893FBD5589C7B27B /* Pods-ChooseAYacht.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +468,7 @@
 		};
 		1F9176D229524C820063330B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67FF93A5ED85CDE116DAD8D /* Pods-ChooseAYacht.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

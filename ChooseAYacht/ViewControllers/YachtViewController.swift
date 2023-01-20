@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import Alamofire
+import Alamofire
 
 class YachtViewController: UITableViewController {
 
@@ -50,14 +50,24 @@ class YachtViewController: UITableViewController {
     func fetchYachts() {
         guard let url = URL(string: jsonUrl) else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            do {
-                self.yachts = try JSONDecoder().decode([Yachts].self, from: data)
-            } catch let error {
-                print(error)
+        // Метод Alamofire, именно здесь нужно было бы написать другое, если бы использовала URLSessions
+        AF.request(url).validate().responseJSON { dataResponse in
+            guard let statusCode = dataResponse.response?.statusCode else { return }
+                
+        //Сейчас распарсим по нашей моделе эту строчку self.yachts = try JSONDecoder().decode([Yachts].self, from: data)  вручную, как это было раньше, когда не было decode: - сделали это в Yachts:
+        //сделали валидацию запроса, без нее result всегда будет равен succes
+        //У словаря тип [String: Any]
+            switch dataResponse.result {
+            case .success(let value):
+                     
+                self.yachts = Yachts.getYachts(from: value)
+                     
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error): print(error)
             }
-        }.resume()
+        }
     }
      
     //MARK: - Подготовка перехода на экран с деталями
