@@ -58,6 +58,25 @@ class JetskiViewController: UITableViewController {
                 print(error)
             }
         }.resume()
+        
+        // Метод Alamofire, именно здесь нужно было бы написать другое, если бы использовала URLSessions
+        AF.request(url).validate().responseJSON { dataResponse in
+            guard let statusCode = dataResponse.response?.statusCode else { return }
+                
+        //Сейчас распарсим по нашей моделе эту строчку self.jetskis = try JSONDecoder().decode([Jetskis].self, from: data)  вручную, как это было раньше, когда не было decode: - сделали это в Jetskis:
+        //сделали валидацию запроса, без нее result всегда будет равен succes
+        //У словаря тип [String: Any]
+            switch dataResponse.result {
+            case .success(let value):
+                     
+                self.jetskis = Jetskis.getJetskis(from: value)
+                     
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error): print(error)
+            }
+        }
     }
      
     //MARK: - Подготовка перехода на экран с деталями
