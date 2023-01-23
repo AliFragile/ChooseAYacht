@@ -7,15 +7,15 @@
 
 import UIKit
 
-class YachtDetailViewController: UIViewController {
+class YachtDetailViewController: UIScrollView {
 
     var yacht: Yachts!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//
+//    }
     
 
 

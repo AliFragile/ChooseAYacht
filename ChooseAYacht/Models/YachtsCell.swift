@@ -15,10 +15,10 @@ class YachtsCell: UITableViewCell {
     
     func configure(with yachts: Yachts) {
         titleLabel.text = yachts.name
-        priceLabel.text = yachts.price
+        priceLabel.text = yachts.price?[0]
         
         DispatchQueue.global().async {
-            guard let imageUrl = URL(string: yachts.imageUrl) else { return }
+            guard let imageUrl = URL(string: yachts.imageUrl![0]) else { return }
             guard let imageData = try? Data(contentsOf: imageUrl) else { return }
             
             DispatchQueue.main.async {

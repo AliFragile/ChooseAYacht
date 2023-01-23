@@ -16,45 +16,34 @@ struct Yachts: Decodable {
     let charterInclusions: String?
     let charterActivityOptions: String?
     
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case imageUrl = "images"
-        case price = "price"
-        case description = "description"
-        case typeOfBoat = "typeOfBoat"
-        case capacity = "capacity"
-        case features = "features"
-        case charterInclusions = "charterInclusions"
-        case charterActivityOptions = "charterActivityOption"
+    init(yachtData: [String: String]) {
+        name = yachtData["name"]
+        imageUrl = yachtData["images"] as? [String]
+        price = yachtData["price"] as? [String]
+        description = yachtData["description"]
+        typeOfBoat = yachtData["typeOfBoat"]
+        capacity = yachtData["capacity"]
+        features = yachtData["features"]
+        charterInclusions = yachtData["charterInclusions"]
+        charterActivityOptions = yachtData["charterActivityOptions"]
     }
     
-    init(dictYacht: [String: Any]) {
-        name = dictYacht["name"] as? String  //тип Any приводим к типу String
-        imageUrl = dictYacht["images"] as? [String]
-        price = dictYacht["price"] as? [String]
-        description = dictYacht["description"] as? String
-        typeOfBoat = dictYacht["typeOfBoat"] as? String
-        capacity = dictYacht["capacity"] as? String
-        features = dictYacht["features"] as? String
-        charterInclusions = dictYacht["charterInclusions"] as? String
-        charterActivityOptions = dictYacht["charterActivityOption"] as? String
-    }
-    
-    static func getYachts(from jsonData: Any) -> [Yachts] {
-        guard let jsonData = jsonData as? Array<[String: Any]> else { return [] }  //теперь это массив
+    static func getYachts(from value: Any) -> [Yachts] {
+        guard let yachtsData = value as? [[String: String]] else { return [] }
         
-        //Можно сделать так:
-//        var yachts: [Yachts] = []
-//
-//        for dictYacht in jsonData {
-//            let yacht = Yacht(dictYacht: dictYacht)
-//            yachts.append(yacht)
-//        }
-//
-//        return yachts
+        /* можно сделать такой вариант, а можно тот, что ниже:
+         var yachts: [Yachts] = []
+         
+         //для каждого словаря в массиве Яхт
+         for yachtData in yachtsData {
+         let yacht = Yachts(yachtData: yachtData)
+         yachts.append(yacht)
+         }
+         return yachts
+         }
+         */
         
-        //А можно сделать через функциональное программирование в одну строчку:
-        return jsonData.compactMap { Yachts(dictYacht: $0) }   //$0 - это каждый словарь(каждый элемент массива)
+        return yachtsData.compactMap{ Yachts(yachtData: $0)}
     }
 }
 

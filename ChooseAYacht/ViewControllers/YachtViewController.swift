@@ -10,7 +10,7 @@ import Alamofire
 
 class YachtViewController: UITableViewController {
 
-    private let jsonUrl = "https://drive.google.com/file/d/1tbuaxHGbXpr1ENDB317zZz1E1IZDKjTb/view?usp=share_link"
+    private let jsonUrl = "https://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_linkhttps://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_link"
     
     private var selectedYacht: Yachts!
     private var yachts: [Yachts] = []
@@ -48,28 +48,24 @@ class YachtViewController: UITableViewController {
     }
     
     func fetchYachts() {
-        guard let url = URL(string: jsonUrl) else { return }
-        
         // Метод Alamofire, именно здесь нужно было бы написать другое, если бы использовала URLSessions
-        AF.request(url).validate().responseJSON { dataResponse in
-            guard let statusCode = dataResponse.response?.statusCode else { return }
-                
-        //Сейчас распарсим по нашей моделе эту строчку self.yachts = try JSONDecoder().decode([Yachts].self, from: data)  вручную, как это было раньше, когда не было decode: - сделали это в Yachts:
-        //сделали валидацию запроса, без нее result всегда будет равен succes
-        //У словаря тип [String: Any]
-            switch dataResponse.result {
-            case .success(let value):
-                     
-                self.yachts = Yachts.getYachts(from: value)
-                     
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+        // делаем запрос на сервер(request) и получаем ответ DataResponse
+        AF.request(jsonUrl)
+            .validate()
+        // без validate() всегда будет отображаться success, поэтому validate() обязательно
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):           // value имеет тип Any
+                    self.yachts = Yachts.getYachts(from: value)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error): print(error)
             }
-        }
     }
-     
+    
     //MARK: - Подготовка перехода на экран с деталями
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! YachtDetailViewController

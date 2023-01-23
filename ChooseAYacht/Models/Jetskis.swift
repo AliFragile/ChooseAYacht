@@ -15,22 +15,13 @@ struct Jetskis: Decodable {
     let features: String?
     let charterActivityOptions: String?
     
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case imageUrl = "images"
-        case price = "price"
-        case description = "description"
-        case features = "features"
-        case charterActivityOptions = "charterActivityOption"
-    }
-    
     init(dictJetski: [String: Any]) {
         name = dictJetski["name"] as? String  //тип Any приводим к типу String
         imageUrl = dictJetski["images"] as? [String]
         price = dictJetski["price"] as? [String]
         description = dictJetski["description"] as? String
         features = dictJetski["features"] as? String
-        charterActivityOptions = dictJetski["charterActivityOption"] as? String
+        charterActivityOptions = dictJetski["charterActivityOptions"] as? String
     }
     
     static func getJetskis(from jsonData: Any) -> [Jetskis] {
