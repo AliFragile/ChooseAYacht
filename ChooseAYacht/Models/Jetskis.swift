@@ -15,30 +15,30 @@ struct Jetskis: Decodable {
     let features: String?
     let charterActivityOptions: String?
     
-    init(dictJetski: [String: Any]) {
-        name = dictJetski["name"] as? String  //тип Any приводим к типу String
-        imageUrl = dictJetski["images"] as? [String]
-        price = dictJetski["price"] as? [String]
-        description = dictJetski["description"] as? String
-        features = dictJetski["features"] as? String
-        charterActivityOptions = dictJetski["charterActivityOptions"] as? String
+    init(jetskiData: [String: Any]) {
+        name = jetskiData["name"] as? String
+        imageUrl = jetskiData["images"] as? [String]
+        price = jetskiData["price"] as? [String]
+        description = jetskiData["description"] as? String
+        features = jetskiData["features"] as? String
+        charterActivityOptions = jetskiData["charterActivityOptions"] as? String
     }
     
-    static func getJetskis(from jsonData: Any) -> [Jetskis] {
-        guard let jsonData = jsonData as? Array<[String: Any]> else { return [] }  //теперь это массив
+    static func getJetskis(from value: Any) -> [Jetskis] {
+        guard let jetskisData = value as? [[String: String]] else { return [] }
         
         //Можно сделать так:
-//        var yachts: [Yachts] = []
+//        var jetskis: [Jetskis] = []
 //
-//        for dictYacht in jsonData {
-//            let yacht = Yacht(dictYacht: dictYacht)
-//            yachts.append(yacht)
+//        for jetskiData in jetskisData {
+//            let jetski = Jetskis(jetskiData: jetskiData)
+//            jetskis.append(jetski)
 //        }
 //
-//        return yachts
+//        return jetskis
         
         //А можно сделать через функциональное программирование в одну строчку:
-        return jsonData.compactMap { Jetskis(dictJetski: $0) }   //$0 - это каждый словарь(каждый элемент массива)
+        return jetskisData.compactMap { Jetskis(jetskiData: $0) }   //$0 - это каждый словарь(каждый элемент массива)
     }
 }
 
@@ -47,4 +47,3 @@ struct JetskisWebsiteDescription: Decodable {
     let websiteDescription: String?
     let websiteName: String?
 }
-

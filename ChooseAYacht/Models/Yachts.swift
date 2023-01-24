@@ -16,16 +16,16 @@ struct Yachts: Decodable {
     let charterInclusions: String?
     let charterActivityOptions: String?
     
-    init(yachtData: [String: String]) {
-        name = yachtData["name"]
+    init(yachtData: [String: Any]) {
+        name = yachtData["name"] as? String
         imageUrl = yachtData["images"] as? [String]
         price = yachtData["price"] as? [String]
-        description = yachtData["description"]
-        typeOfBoat = yachtData["typeOfBoat"]
-        capacity = yachtData["capacity"]
-        features = yachtData["features"]
-        charterInclusions = yachtData["charterInclusions"]
-        charterActivityOptions = yachtData["charterActivityOptions"]
+        description = yachtData["description"] as? String
+        typeOfBoat = yachtData["typeOfBoat"] as? String
+        capacity = yachtData["capacity"] as? String
+        features = yachtData["features"] as? String
+        charterInclusions = yachtData["charterInclusions"] as? String
+        charterActivityOptions = yachtData["charterActivityOptions"] as? String
     }
     
     static func getYachts(from value: Any) -> [Yachts] {

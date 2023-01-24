@@ -66,9 +66,10 @@ class YachtViewController: UITableViewController {
             }
     }
     
-    //MARK: - Подготовка перехода на экран с деталями
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! YachtDetailViewController
-        destinationVC.yacht = selectedYacht
-    }
+//    //MARK: - Подготовка перехода на экран с деталями
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destinationVC = segue.destination as! YachtDetailViewController
+//        destinationVC.yacht = selectedYacht
+//    }
+    
 }
