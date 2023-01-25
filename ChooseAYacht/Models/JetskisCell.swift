@@ -7,22 +7,22 @@
 
 import UIKit
 
-class JetskisCell: UITableViewCell {
+final class JetskisCell: UITableViewCell {
  
-    @IBOutlet var jetskiImage: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet private var jetskiImageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var priceLabel: UILabel!
     
     func configure(with jetskis: Jetskis) {
-        titleLabel.text = jetskis.name
-        priceLabel.text = jetskis.price?[0]
+        nameLabel.text = jetskis.name
+        priceLabel.text = jetskis.price?.first
         
         DispatchQueue.global().async {
-            guard let imageUrl = URL(string: jetskis.imageUrl![0]) else { return }
+            guard let imageUrl = URL(string: jetskis.imageUrl?.first ?? "questionmark") else { return }
             guard let imageData = try? Data(contentsOf: imageUrl) else { return }
             
             DispatchQueue.main.async {
-                self.jetskiImage.image = UIImage(data: imageData)
+                self.jetskiImageView.image = UIImage(data: imageData)
             }
         }
     }

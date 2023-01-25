@@ -7,26 +7,31 @@
 
 import UIKit
 
-class JetskiDetailViewController: UIScrollView {
+final class JetskiDetailViewController: UIViewController, UIScrollViewDelegate {
     
     var jetski: Jetskis!
     
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
     
+    @IBOutlet private var firstPriceLabel: UILabel!
+    @IBOutlet private var secondPriceLabel: UILabel!
+    
+    @IBOutlet private var featuresLabel: UILabel!
+    @IBOutlet private var charterActivityOptionsLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // imageView.image = jetski.imageUrl?.first
+         nameLabel.text = jetski.name
+         
+         firstPriceLabel.text = jetski.price?.first
+         secondPriceLabel.text = jetski.price?.last
+         
+         featuresLabel.text = jetski.features
+         charterActivityOptionsLabel.text = jetski.charterActivityOptions
+         descriptionLabel.text = jetski.description
     }
-    */
-
 }

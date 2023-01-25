@@ -9,15 +9,15 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
-    @IBOutlet var yachtImageView: UIImageView!
-    @IBOutlet var textImageView: UIImageView!
+    @IBOutlet private var yachtImageView: UIImageView!
+    @IBOutlet private var textImageView: UIImageView!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        animate()
+        animateImages()
     }
     
-    private func animate() {
+    private func animateImages() {
         // убираю картинки текста и яхты, чтобы не было видно
         yachtImageView.transform = CGAffineTransform(translationX: -150, y:0)
         textImageView.transform = CGAffineTransform(translationX: 300, y: 0)
@@ -34,8 +34,7 @@ final class SplashViewController: UIViewController {
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //self.performSegue(withIdentifier: "ShowYachtVC", sender: nil)
-
-                    guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarID") else { return }
+                    guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") else { return }
                     newViewController.modalTransitionStyle = .crossDissolve
                     newViewController.modalPresentationStyle = .fullScreen
                     self.show(newViewController, sender: nil)
@@ -44,3 +43,15 @@ final class SplashViewController: UIViewController {
         })
     }
 }
+
+
+// нужный код на будущее
+/*
+ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     if(segue.identifier == "tabBarShow"){
+         if let tabVC = segue.destinationViewController as? UITabBarController{
+             tabVC.selectedIndex = 3
+         }
+     }
+ }
+ */

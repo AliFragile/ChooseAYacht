@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class JetskiViewController: UITableViewController {
+final class JetskiViewController: UITableViewController {
 
     private let jsonUrl = "https://drive.google.com/file/d/1HPRx-N53FAJ3zV2BwXY2uK84iYy7pIuC/view?usp=share_link"
     
@@ -21,26 +21,6 @@ class JetskiViewController: UITableViewController {
         fetchJetskis()
     }
 
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
-        return jetskis.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "jetskiCell", for: indexPath) as! JetskisCell
-
-        let jetski = jetskis[indexPath.row]
-        cell.configure(with: jetski)
-
-        return cell
-    }
-    
-    // MARK: - TableViewDelegate
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
     // MARK: - Перемещение на DetailViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedJetski = jetskis[indexPath.row]
@@ -71,4 +51,28 @@ class JetskiViewController: UITableViewController {
 //        let destinationVC = segue.destination as! JetskiDetailViewController
 //        destinationVC.jetski = selectedJetski
 //    }
+}
+
+// MARK: - Table view data source
+extension JetskiViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // return the number of rows
+        return jetskis.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "jetskiCell", for: indexPath) as? JetskisCell else { return UITableViewCell() }
+        
+        let jetski = jetskis[indexPath.row]
+        cell.configure(with: jetski)
+        
+        return cell
+    }
+}
+
+// MARK: - TableViewDelegate
+extension JetskiViewController {
+       override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 100
+       }
 }

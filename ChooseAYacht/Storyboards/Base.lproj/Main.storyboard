@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="cuM-3G-ge7">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarID" id="udi-A5-uM7" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="udi-A5-uM7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="TRa-Ue-fe0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ExQ-gn-AEw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -19,8 +19,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hYv-1g-NTb" kind="relationship" relationship="viewControllers" destinationCreationSelector="One" id="c3q-57-EB4"/>
-                        <segue destination="YlR-3Y-gXj" kind="relationship" relationship="viewControllers" destinationCreationSelector="Two" id="in3-aI-4eg"/>
+                        <segue destination="hYv-1g-NTb" kind="relationship" relationship="viewControllers" id="c3q-57-EB4"/>
+                        <segue destination="YlR-3Y-gXj" kind="relationship" relationship="viewControllers" id="in3-aI-4eg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICj-aS-Nk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,7 +96,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.61182171106338501" green="0.78509289026260376" blue="0.92177510261535645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yachtCell" rowHeight="100" id="ks2-ZS-GGM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yachtCell" rowHeight="100" id="ks2-ZS-GGM" customClass="YachtsCell" customModule="ChooseAYacht" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ks2-ZS-GGM" id="G05-rb-V6T">
@@ -136,6 +136,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nameLabel" destination="aBg-8K-Qaa" id="aWc-nt-sWC"/>
+                                    <outlet property="priceLabel" destination="Bqk-QP-xd7" id="GJy-oC-Xqa"/>
+                                    <outlet property="yachtImageView" destination="4nd-Xp-SOW" id="zEv-BY-Chp"/>
                                     <segue destination="vN9-UH-fqz" kind="show" identifier="GoToYachtDetailVC" id="j86-we-3QQ"/>
                                 </connections>
                             </tableViewCell>
@@ -356,6 +359,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="DFG-o7-nml"/>
                     <size key="freeformSize" width="414" height="1100"/>
+                    <connections>
+                        <outlet property="capacityLabel" destination="dvY-eB-TN6" id="wod-EQ-7nU"/>
+                        <outlet property="charterActivityOptionsLabel" destination="Jxk-t0-Imp" id="RtZ-SS-N6Y"/>
+                        <outlet property="charterInclusionsLabel" destination="j8j-WJ-zta" id="ggU-Bi-T2b"/>
+                        <outlet property="descriptionLabel" destination="CyE-oa-waW" id="F3l-ZZ-rRy"/>
+                        <outlet property="featuresLabel" destination="I4d-AU-3ld" id="x51-fh-bEF"/>
+                        <outlet property="firstPriceLabel" destination="YmE-0f-NVs" id="cpG-rb-xo4"/>
+                        <outlet property="imageView" destination="phc-DF-nSZ" id="baS-J4-FJc"/>
+                        <outlet property="nameLabel" destination="SHw-uf-D5u" id="79X-xq-U37"/>
+                        <outlet property="secondPriceLabel" destination="mMo-GD-MNr" id="Vyo-v4-awc"/>
+                        <outlet property="thirdPriceLabel" destination="cYy-4j-Mnv" id="iSk-ee-Ynr"/>
+                        <outlet property="typeOfBoatLabel" destination="Pfa-7Q-fXK" id="O7X-O9-KHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Bj-nn-DNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,7 +405,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.61182171106338501" green="0.78509289026260376" blue="0.92177510261535645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jetskiCell" rowHeight="100" id="Hr5-tf-aGM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jetskiCell" rowHeight="100" id="Hr5-tf-aGM" customClass="JetskisCell" customModule="ChooseAYacht" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hr5-tf-aGM" id="c2b-Vi-6YV">
@@ -429,6 +445,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="jetskiImageView" destination="z1N-1A-RvK" id="j4D-eH-Xux"/>
+                                    <outlet property="nameLabel" destination="11t-5Q-4UR" id="mlX-p7-ChX"/>
+                                    <outlet property="priceLabel" destination="JPt-jc-zET" id="stW-ft-Pb3"/>
                                     <segue destination="Ixw-ET-gQR" kind="show" identifier="GoToJetskiDetailVC" id="i5b-8U-KLQ"/>
                                 </connections>
                             </tableViewCell>
@@ -482,7 +501,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CharterAvtivityOptions:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZF-fN-wdM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CharterActivityOptions:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZF-fN-wdM">
                                                 <rect key="frame" x="20" y="526.5" width="374" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
@@ -589,6 +608,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="7hT-7i-KFk"/>
                     <size key="freeformSize" width="414" height="1100"/>
+                    <connections>
+                        <outlet property="charterActivityOptionsLabel" destination="cZF-fN-wdM" id="JtI-lo-W82"/>
+                        <outlet property="descriptionLabel" destination="vvI-xg-J4R" id="ld2-A6-oWO"/>
+                        <outlet property="featuresLabel" destination="0co-q0-efy" id="0gZ-JN-tFW"/>
+                        <outlet property="firstPriceLabel" destination="4o7-rl-a1z" id="ahs-DI-B7t"/>
+                        <outlet property="imageView" destination="RhX-dy-Iwd" id="qHm-HR-Vaq"/>
+                        <outlet property="nameLabel" destination="ulG-ZY-nh1" id="Yfh-4K-BWm"/>
+                        <outlet property="secondPriceLabel" destination="DMJ-wD-BJO" id="hZl-Ya-CWg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWs-EP-UiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

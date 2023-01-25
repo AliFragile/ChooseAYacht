@@ -7,49 +7,40 @@
 
 import UIKit
 
-class YachtDetailViewController: UIScrollView {
+final class YachtDetailViewController: UIViewController, UIScrollViewDelegate {
 
     var yacht: Yachts!
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//
-//    }
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
     
+    @IBOutlet private var firstPriceLabel: UILabel!
+    @IBOutlet private var secondPriceLabel: UILabel!
+    @IBOutlet private var thirdPriceLabel: UILabel!
+    
+    @IBOutlet private var typeOfBoatLabel: UILabel!
+    @IBOutlet private var capacityLabel: UILabel!
+    @IBOutlet private var featuresLabel: UILabel!
+    @IBOutlet private var charterInclusionsLabel: UILabel!
+    @IBOutlet private var charterActivityOptionsLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-
-
-}
-
-/*
- class DetailViewController: UIViewController {
-
-     var trip: Trips!
-
-     @IBOutlet var image: UIImageView!
-     @IBOutlet var titleLabel: UILabel!
-     @IBOutlet var priceLabel: UILabel!
-     @IBOutlet var descriptionLabel: UILabel!
-     
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         
-         titleLabel.text = trip.name
-         priceLabel.text =  trip.price
-         descriptionLabel.text = trip.description
+       // imageView.image = yacht.imageUrl?.first
+        nameLabel.text = yacht.name
         
-         displayImage(for: trip)
-     }
-     
-     private func displayImage(for trip: Trips) {
-         
-         let imagePath = trip.imageUrl
-         guard let imageUrl = URL(string: "\(imagePath)") else { return }
-         guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-         
-         image.image = UIImage(data: imageData)
-     }
-
- }
- */
+        firstPriceLabel.text = yacht.price?.first
+        //но здесь потом изменить [1]
+        secondPriceLabel.text = yacht.price?[1]
+        thirdPriceLabel.text = yacht.price?.last
+        
+        typeOfBoatLabel.text = yacht.typeOfBoat
+        capacityLabel.text = yacht.capacity
+        featuresLabel.text = yacht.features
+        charterInclusionsLabel.text = yacht.charterInclusions
+        charterActivityOptionsLabel.text = yacht.charterActivityOptions
+        descriptionLabel.text = yacht.description
+    }
+}

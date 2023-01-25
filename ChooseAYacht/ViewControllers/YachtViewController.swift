@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class YachtViewController: UITableViewController {
+final class YachtViewController: UITableViewController {
 
     private let jsonUrl = "https://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_linkhttps://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_link"
     
@@ -19,26 +19,6 @@ class YachtViewController: UITableViewController {
         super.viewDidLoad()
 
         fetchYachts()
-    }
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
-        return yachts.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "yachtCell", for: indexPath) as! YachtsCell
-
-        let yacht = yachts[indexPath.row]
-        cell.configure(with: yacht)
-
-        return cell
-    }
-    
-    // MARK: - TableViewDelegate
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
     
     // MARK: - Перемещение на DetailViewController
@@ -71,5 +51,29 @@ class YachtViewController: UITableViewController {
 //        let destinationVC = segue.destination as! YachtDetailViewController
 //        destinationVC.yacht = selectedYacht
 //    }
+}
+
+
+// MARK: - Table view data source
+extension YachtViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // return the number of rows
+        return yachts.count
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "yachtCell", for: indexPath) as? YachtsCell else { return UITableViewCell() }
+
+        let yacht = yachts[indexPath.row]
+        cell.configure(with: yacht)
+
+        return cell
+    }
+}
+
+// MARK: - TableViewDelegate
+extension YachtViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
