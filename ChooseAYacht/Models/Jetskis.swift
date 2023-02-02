@@ -42,8 +42,11 @@ struct Jetskis: Decodable {
     }
 }
 
+
+/*
 struct JetskisWebsiteDescription: Decodable {
     let jetskis: [Jetskis]?
     let websiteDescription: String?
     let websiteName: String?
 }
+*/

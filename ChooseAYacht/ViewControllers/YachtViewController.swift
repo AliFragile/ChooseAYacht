@@ -9,15 +9,15 @@ import UIKit
 import Alamofire
 
 final class YachtViewController: UITableViewController {
-
-    private let jsonUrl = "https://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_linkhttps://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_link"
+    
+    private let jsonUrl = "https://chooseayacht-default-rtdb.firebaseio.com/Yachts-List.json"
     
     private var selectedYacht: Yachts!
     private var yachts: [Yachts] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchYachts()
     }
     
@@ -44,14 +44,15 @@ final class YachtViewController: UITableViewController {
                     print(error)
                 }
             }
+        
     }
-    
+}
 //    //MARK: - Подготовка перехода на экран с деталями
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let destinationVC = segue.destination as! YachtDetailViewController
 //        destinationVC.yacht = selectedYacht
 //    }
-}
+
 
 
 // MARK: - Table view data source
@@ -77,3 +78,64 @@ extension YachtViewController {
         return 100
     }
 }
+
+
+/*
+ unc fetchTrips() {
+     guard let url = URL(string: jsonUrl) else { return }
+     
+     URLSession.shared.dataTask(with: url) { (data, _, _) in
+         
+         guard let data = data else { return }
+         
+         do {
+             self.trips = try JSONDecoder().decode([Trips].self, from: data)
+         } catch let error {
+             print(error)
+         }
+     }.resume()
+ }
+ */
+
+
+/*
+ func fetchYachts() -> String {
+             var circData = "emptyString"
+             let session = URLSession.shared
+             let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1/comments")!
+             let task = session.dataTask(with: url, completionHandler: { data, response, error in
+                 print("1111", data)
+                 let json = try! JSONSerialization.jsonObject(with: data!, options: [])
+     //                print("json: ", json) // prints the whole json file, verifying the connection works. Some 300kb of data.
+     //                print("json file type: ", type(of: json)) // prints '__NSArrayI'
+                     print("1111", json)
+                     let jsonString = "\(json)"
+                     circData = jsonString
+     //                print("circData", circData) // prints the whole json file, verifying that the json string has been assigned to 'circData'
+                 
+             })
+             task.resume()
+     //        print("after: ", circData) // prints 'after: emptyString'. It's as if the reassignment didn't take place.
+             return circData
+         }
+     /*
+     // Метод Alamofire, именно здесь нужно было бы написать другое, если бы использовала URLSessions
+     // делаем запрос на сервер(request) и получаем ответ DataResponse
+     AF.request(jsonUrl)
+         .validate()
+     // без validate() всегда будет отображаться success, поэтому validate() обязательно
+         .responseJSON { dataResponse in
+             print(dataResponse, "111111111")
+             switch dataResponse.result {
+             case .success(let value):           // value имеет тип Any
+                 self.yachts = Yachts.getYachts(from: value)
+                 DispatchQueue.main.async {
+                     self.tableView.reloadData()
+                 }
+             case .failure(let error):
+                 print(error)
+             }
+         }
+      */
+ }
+ */
