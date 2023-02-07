@@ -9,8 +9,9 @@ import UIKit
 import Alamofire
 
 final class JetskiViewController: UITableViewController {
-
-    private let jsonUrl = "https://drive.google.com/file/d/1HPRx-N53FAJ3zV2BwXY2uK84iYy7pIuC/view?usp=share_link"
+    
+    //c Pastebin измененный файл
+    private let jsonUrl = "https://pastebin.com/raw/NwTvsm3Q"
     
     private var selectedJetski: Jetskis!
     private var jetskis: [Jetskis] = []
@@ -46,11 +47,34 @@ final class JetskiViewController: UITableViewController {
             }
     }
     
+    // Для проверки:
+    /*
+    func fetchJetskis() -> String {
+        var circData = "emptyString"
+        let session = URLSession.shared
+        let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1/comments")!
+        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+            print("1111", data)
+            let json = try! JSONSerialization.jsonObject(with: data!, options: [])
+            //                print("json: ", json) // prints the whole json file, verifying the connection works. Some 300kb of data.
+            //                print("json file type: ", type(of: json)) // prints '__NSArrayI'
+            print("1111", json)
+            let jsonString = "\(json)"
+            circData = jsonString
+            //                print("circData", circData) // prints the whole json file, verifying that the json string has been assigned to 'circData'
+            
+        })
+        task.resume()
+        //        print("after: ", circData) // prints 'after: emptyString'. It's as if the reassignment didn't take place.
+        return circData
+    }
+     */
+    
 //    //MARK: - Подготовка перехода на экран с деталями
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinationVC = segue.destination as! JetskiDetailViewController
-//        destinationVC.jetski = selectedJetski
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! JetskiDetailViewController
+        destinationVC.jetski = selectedJetski
+    }
 }
 
 // MARK: - Table view data source
@@ -76,3 +100,4 @@ extension JetskiViewController {
            return 100
        }
 }
+
