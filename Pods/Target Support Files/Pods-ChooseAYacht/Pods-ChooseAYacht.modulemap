@@ -1,0 +1,6 @@
+framework module Pods_ChooseAYacht {
+  umbrella header "Pods-ChooseAYacht-umbrella.h"
+
+  export *
+  module * { export * }
+}
