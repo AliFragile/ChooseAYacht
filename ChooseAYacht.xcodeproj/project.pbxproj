@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,7 +90,6 @@
 				1F88848B2971EACF002931A3 /* Splash */,
 				1FEA37F52974B718003CD08A /* ViewControllers */,
 				1F9176D529524D360063330B /* Models */,
-				1F9176D629524D4B0063330B /* Helpers */,
 				1F9176D729524D570063330B /* Storyboards */,
 				1F9176D829524D840063330B /* Resources */,
 				1F9176D429524CB50063330B /* App */,
@@ -117,13 +116,6 @@
 				1F68BCAD2976F77400A4979C /* JetskisCell.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1F9176D629524D4B0063330B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		1F9176D729524D570063330B /* Storyboards */ = {
@@ -168,7 +160,6 @@
 				71C71C64893FBD5589C7B27B /* Pods-ChooseAYacht.debug.xcconfig */,
 				A67FF93A5ED85CDE116DAD8D /* Pods-ChooseAYacht.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
