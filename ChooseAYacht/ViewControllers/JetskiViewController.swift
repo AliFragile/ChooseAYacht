@@ -37,9 +37,12 @@ final class JetskiViewController: UITableViewController {
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):           // value имеет тип Any
-                    self.jetskis = Jetskis.getJetskis(from: value)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                    if let data = try? JSONSerialization.data(withJSONObject: value, options: []),
+                       let jetskis = try? JSONDecoder().decode([Jetskis].self, from: data) {
+                        self.jetskis = jetskis
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 case .failure(let error):
                     print(error)

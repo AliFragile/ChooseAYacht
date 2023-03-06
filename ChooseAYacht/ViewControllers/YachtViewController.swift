@@ -13,16 +13,6 @@ final class YachtViewController: UITableViewController {
     //c Pastebin измененный файл
     private let jsonUrl = "https://pastebin.com/raw/vC1GWWCh"
     
-    
-    //старый файл с Pastebin
-    //private let jsonUrl = "https://pastebin.com/raw/zZB72rLq"
-
-    // C гитхаба
-    //private let jsonUrl = "https://github.com/AliFragile/AliFragile.github.io/blob/main/customer.json"
-    
-    //с гугл диска измененный файл - выдает ошибку
-    //private let jsonUrl = "https://drive.google.com/file/d/1cOKcL58EX3pcdwZWoj4ZmYmZv_odQXmY/view?usp=share_link"
-     
     private var selectedYacht: Yachts!
     private var yachts: [Yachts] = []
     
@@ -38,6 +28,7 @@ final class YachtViewController: UITableViewController {
         performSegue(withIdentifier: "GoToYachtDetailVC", sender: nil)
     }
     
+    
      func fetchYachts() {
      // Метод Alamofire, именно здесь нужно было бы написать другое, если бы использовала URLSessions
      // делаем запрос на сервер(request) и получаем ответ DataResponse
@@ -47,15 +38,19 @@ final class YachtViewController: UITableViewController {
              .responseJSON { dataResponse in
                  switch dataResponse.result {
                  case .success(let value):           // value имеет тип Any
-                     self.yachts = Yachts.getYachts(from: value)
-                     DispatchQueue.main.async {
-                         self.tableView.reloadData()
+                     if let data = try? JSONSerialization.data(withJSONObject: value, options: []),
+                        let yachts = try? JSONDecoder().decode([Yachts].self, from: data) {
+                         self.yachts = yachts
+                         DispatchQueue.main.async {
+                             self.tableView.reloadData()
+                         }
                      }
                  case .failure(let error):
                      print(error)
                  }
              }
      }
+     
      
     // Для проверки:
     /*
@@ -116,6 +111,7 @@ extension YachtViewController {
 // MARK: - TableViewDelegate
 extension YachtViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
+        
     }
 }

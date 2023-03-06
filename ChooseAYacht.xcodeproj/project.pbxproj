@@ -18,6 +18,7 @@
 		1F9176C729524C810063330B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C529524C810063330B /* Main.storyboard */; };
 		1F9176C929524C820063330B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C829524C820063330B /* Assets.xcassets */; };
 		1F9176CC29524C820063330B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176CA29524C820063330B /* LaunchScreen.storyboard */; };
+		1FD0E12A29B6633600F25167 /* UIImageView + loadUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */; };
 		1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F62974B736003CD08A /* YachtViewController.swift */; };
 		1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F82974B76A003CD08A /* JetskiViewController.swift */; };
 		1FEA37FB2974B779003CD08A /* YachtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */; };
@@ -38,6 +39,7 @@
 		1F9176C829524C820063330B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9176CB29524C820063330B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9176CD29524C820063330B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + loadUrl.swift"; sourceTree = "<group>"; };
 		1FEA37F62974B736003CD08A /* YachtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtViewController.swift; sourceTree = "<group>"; };
 		1FEA37F82974B76A003CD08A /* JetskiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetskiViewController.swift; sourceTree = "<group>"; };
 		1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtDetailViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				1F88848B2971EACF002931A3 /* Splash */,
 				1FEA37F52974B718003CD08A /* ViewControllers */,
 				1F9176D529524D360063330B /* Models */,
+				1FD0E12829B6630D00F25167 /* Extensions */,
 				1F9176D729524D570063330B /* Storyboards */,
 				1F9176D829524D840063330B /* Resources */,
 				1F9176D429524CB50063330B /* App */,
@@ -133,6 +136,14 @@
 				1F9176C829524C820063330B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1FD0E12829B6630D00F25167 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1FEA37F52974B718003CD08A /* ViewControllers */ = {
@@ -278,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD0E12A29B6633600F25167 /* UIImageView + loadUrl.swift in Sources */,
 				1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */,
 				1F68BCAE2976F77400A4979C /* JetskisCell.swift in Sources */,
 				1F9176C029524C810063330B /* AppDelegate.swift in Sources */,

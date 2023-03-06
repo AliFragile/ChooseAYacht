@@ -10,6 +10,7 @@ import UIKit
 final class JetskisCell: UITableViewCell {
  
     @IBOutlet private var jetskiImageView: UIImageView!
+    
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var priceLabel: UILabel!
     
@@ -17,12 +18,20 @@ final class JetskisCell: UITableViewCell {
         nameLabel.text = jetskis.name
         priceLabel.text = jetskis.price?.first
         
+        jetskiImageView.contentMode = .scaleAspectFill
+        
         DispatchQueue.global().async {
-            guard let imageUrl = URL(string: jetskis.imageUrl?.first ?? "questionmark") else { return }
-            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-            
-            DispatchQueue.main.async {
-                self.jetskiImageView.image = UIImage(data: imageData)
+            let link = "https://lh3.googleusercontent.com/Iw4O8B0edGEQnzlJNUXjfMXVKJv9OKlbGKV1LSwHoifN8QaD5jeVVV_NGcY0fXSjIxwPGMeNrwmRFr2AQXD-_O2-pj4JNd_LBp-Fh2a8"
+           // if let link = jetskis.images?.first,
+               if let imageUrl = URL(string: link),
+               let imageData = try? Data(contentsOf: imageUrl) {
+                DispatchQueue.main.async {
+                    self.jetskiImageView.image = UIImage(data: imageData)
+                }
+            } else if let image = UIImage(named: "questionmark") {
+                DispatchQueue.main.async {
+                    self.jetskiImageView.image = image
+                }
             }
         }
     }
