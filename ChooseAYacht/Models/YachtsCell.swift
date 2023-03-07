@@ -21,18 +21,28 @@ final class YachtsCell: UITableViewCell {
         yachtImageView.contentMode = .scaleAspectFill
         
         DispatchQueue.global().async {
-            let link = "https://lh3.googleusercontent.com/Iw4O8B0edGEQnzlJNUXjfMXVKJv9OKlbGKV1LSwHoifN8QaD5jeVVV_NGcY0fXSjIxwPGMeNrwmRFr2AQXD-_O2-pj4JNd_LBp-Fh2a8"
-            // if let link = yachts.images?.first,
-            if let imageUrl = URL(string: link),
+            let image = UIImage(named: "questionmark")
+            guard let imageString = image?.toPngString() else { return }
+            
+            if let imageUrl = URL(string: yachts.images?.first ?? imageString),
                let imageData = try? Data(contentsOf: imageUrl) {
                 DispatchQueue.main.async {
                     self.yachtImageView.image = UIImage(data: imageData)
                 }
-            } else if let image = UIImage(named: "questionmark") {
+            } else {
                 DispatchQueue.main.async {
                     self.yachtImageView.image = image
                 }
             }
+            
+            /*
+            guard let imageUrl = URL(string: yachts.images?.first ?? imageString) else { return }
+            guard let imageData = try? Data(contentsOf: imageUrl)  else { return }
+            
+            DispatchQueue.main.async {
+                self.yachtImageView.image = UIImage(data: imageData)
+            }
+             */
         }
     }
 }

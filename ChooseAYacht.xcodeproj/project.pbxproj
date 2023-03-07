@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F47B00229B7A81E00141B1B /* UIImage to String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47B00129B7A81E00141B1B /* UIImage to String.swift */; };
 		1F68BCA82976F5B400A4979C /* Yachts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68BCA72976F5B400A4979C /* Yachts.swift */; };
 		1F68BCAA2976F70700A4979C /* Jetskis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68BCA92976F70700A4979C /* Jetskis.swift */; };
 		1F68BCAC2976F76500A4979C /* YachtsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68BCAB2976F76500A4979C /* YachtsCell.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F47B00129B7A81E00141B1B /* UIImage to String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage to String.swift"; sourceTree = "<group>"; };
 		1F68BCA72976F5B400A4979C /* Yachts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yachts.swift; sourceTree = "<group>"; };
 		1F68BCA92976F70700A4979C /* Jetskis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jetskis.swift; sourceTree = "<group>"; };
 		1F68BCAB2976F76500A4979C /* YachtsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtsCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */,
+				1F47B00129B7A81E00141B1B /* UIImage to String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				1FD0E12A29B6633600F25167 /* UIImageView + loadUrl.swift in Sources */,
 				1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */,
+				1F47B00229B7A81E00141B1B /* UIImage to String.swift in Sources */,
 				1F68BCAE2976F77400A4979C /* JetskisCell.swift in Sources */,
 				1F9176C029524C810063330B /* AppDelegate.swift in Sources */,
 				1F9176C229524C810063330B /* SceneDelegate.swift in Sources */,

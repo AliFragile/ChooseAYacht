@@ -11,17 +11,17 @@ import Alamofire
 final class JetskiViewController: UITableViewController {
     
     //c Pastebin измененный файл
-    private let jsonUrl = "https://pastebin.com/raw/NwTvsm3Q"
+    private let jsonUrl = "https://pastebin.com/raw/NwTvsm3Q" 
     
     private var selectedJetski: Jetskis!
     private var jetskis: [Jetskis] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchJetskis()
     }
-
+    
     // MARK: - Перемещение на DetailViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedJetski = jetskis[indexPath.row]
@@ -52,33 +52,58 @@ final class JetskiViewController: UITableViewController {
     
     // Для проверки:
     /*
-    func fetchJetskis() -> String {
-        var circData = "emptyString"
-        let session = URLSession.shared
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1/comments")!
-        let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            print("1111", data)
-            let json = try! JSONSerialization.jsonObject(with: data!, options: [])
-            //                print("json: ", json) // prints the whole json file, verifying the connection works. Some 300kb of data.
-            //                print("json file type: ", type(of: json)) // prints '__NSArrayI'
-            print("1111", json)
-            let jsonString = "\(json)"
-            circData = jsonString
-            //                print("circData", circData) // prints the whole json file, verifying that the json string has been assigned to 'circData'
-            
-        })
-        task.resume()
-        //        print("after: ", circData) // prints 'after: emptyString'. It's as if the reassignment didn't take place.
-        return circData
-    }
+     func fetchJetskis() -> String {
+     var circData = "emptyString"
+     let session = URLSession.shared
+     let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1/comments")!
+     let task = session.dataTask(with: url, completionHandler: { data, response, error in
+     print("1111", data)
+     let json = try! JSONSerialization.jsonObject(with: data!, options: [])
+     //                print("json: ", json) // prints the whole json file, verifying the connection works. Some 300kb of data.
+     //                print("json file type: ", type(of: json)) // prints '__NSArrayI'
+     print("1111", json)
+     let jsonString = "\(json)"
+     circData = jsonString
+     //                print("circData", circData) // prints the whole json file, verifying that the json string has been assigned to 'circData'
+     
+     })
+     task.resume()
+     //        print("after: ", circData) // prints 'after: emptyString'. It's as if the reassignment didn't take place.
+     return circData
+     }
      */
     
+    //MARK: - Подготовка перехода на экран с деталями
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "GoToYachtDetailVC" { return }
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let detailVC = segue.destination as! JetskiDetailViewController
+            detailVC.jetski = jetskis[indexPath.row]
+        }
+    }
+}
+    /*
 //    //MARK: - Подготовка перехода на экран с деталями
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! JetskiDetailViewController
         destinationVC.jetski = selectedJetski
     }
 }
+     */
+
+/*
+ // MARK: - Navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+     if segue.identifier != "GoToYachtDetailVC" { return }
+     
+     if let indexPath = tableView.indexPathForSelectedRow {
+         let detailVC = segue.destination as! JetskiDetailViewController
+         //detailVC.person = persons[indexPath.row]
+     }
+ }
+ */
 
 // MARK: - Table view data source
 extension JetskiViewController {

@@ -24,14 +24,28 @@ final class JetskiDetailViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // imageView.image = jetski.imageUrl?.first
-         nameLabel.text = jetski.name
+        if let link = jetski?.images?.first, let url = URL(string: link) {
+            imageView.load(url: url)
+        }
+        // либо вот так
+        //imageView.image = jetski?.images?.first
+        
+        nameLabel.text = jetski?.name
          
-         firstPriceLabel.text = jetski.price?.first
-         secondPriceLabel.text = jetski.price?.last
+        firstPriceLabel.text = jetski?.price?.first
+        secondPriceLabel.text = jetski?.price?.last
          
-         featuresLabel.text = jetski.features
-         charterActivityOptionsLabel.text = jetski.charterActivityOptions
-         descriptionLabel.text = jetski.description
+        featuresLabel.text = jetski?.features
+        charterActivityOptionsLabel.text = jetski?.charterActivityOptions
+        descriptionLabel.text = jetski?.description
     }
 }
+
+/*
+ if (foo?.bar = Bar()) != nil {
+     print("bar was set successfully")
+ } else {
+     print("bar wasn’t set successfully")
+ }
+ */
+

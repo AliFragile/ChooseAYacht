@@ -28,22 +28,22 @@ final class YachtDetailViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let link = yacht.images?.first, let url = URL(string: link) {
+        if let link = yacht?.images?.first, let url = URL(string: link) {
             imageView.load(url: url)
         }
         
-        nameLabel.text = yacht.name
+        nameLabel.text = yacht?.name
         
-        firstPriceLabel.text = yacht.price?.first
+        firstPriceLabel.text = yacht?.price?.first
         //но здесь потом изменить [1]
-        secondPriceLabel.text = yacht.price?[1]
-        thirdPriceLabel.text = yacht.price?.last
+        secondPriceLabel.text = yacht?.price?[1]
+        thirdPriceLabel.text = yacht?.price?.last
         
-        typeOfBoatLabel.text = yacht.typeOfBoat
-        capacityLabel.text = yacht.capacity
-        featuresLabel.text = yacht.features
-        charterInclusionsLabel.text = yacht.charterInclusions
-        charterActivityOptionsLabel.text = yacht.charterActivityOptions
-        descriptionLabel.text = yacht.description
+        typeOfBoatLabel.text = yacht?.typeOfBoat
+        capacityLabel.text = yacht?.capacity
+        featuresLabel.text = yacht?.features
+        charterInclusionsLabel.text = yacht?.charterInclusions
+        charterActivityOptionsLabel.text = yacht?.charterActivityOptions
+        descriptionLabel.text = yacht?.description
     }
 }

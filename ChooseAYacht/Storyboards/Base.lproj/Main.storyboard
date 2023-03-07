@@ -52,8 +52,8 @@
                         <constraints>
                             <constraint firstItem="YKD-WL-jyb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bbg-Vv-DUu"/>
                             <constraint firstAttribute="bottom" secondItem="YKD-WL-jyb" secondAttribute="bottom" id="SeM-Us-hvi"/>
-                            <constraint firstItem="YKD-WL-jyb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yca-27-lhj"/>
                             <constraint firstItem="YKD-WL-jyb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tws-ba-KnD"/>
+                            <constraint firstAttribute="trailing" secondItem="YKD-WL-jyb" secondAttribute="trailing" id="wnz-51-8Z6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Item" id="pC9-Ge-fYc"/>

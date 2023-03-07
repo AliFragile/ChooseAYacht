@@ -11,7 +11,7 @@ import Alamofire
 final class YachtViewController: UITableViewController {
     
     //c Pastebin измененный файл
-    private let jsonUrl = "https://pastebin.com/raw/vC1GWWCh"
+    private let jsonUrl = "https://pastebin.com/raw/vC1GWWCh" 
     
     private var selectedYacht: Yachts!
     private var yachts: [Yachts] = []
