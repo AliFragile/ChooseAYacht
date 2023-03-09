@@ -11,15 +11,17 @@ final class JetskiDetailViewController: UIViewController, UIScrollViewDelegate {
     
     var jetski: Jetskis!
     
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var nameLabel: UILabel!
     
-    @IBOutlet private var firstPriceLabel: UILabel!
-    @IBOutlet private var secondPriceLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
     
-    @IBOutlet private var featuresLabel: UILabel!
-    @IBOutlet private var charterActivityOptionsLabel: UILabel!
-    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet var firstPriceLabel: UILabel!
+    @IBOutlet var secondPriceLabel: UILabel!
+   
+    @IBOutlet var featuresLabel: UILabel!
+    @IBOutlet var charterActivityOptionsLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
