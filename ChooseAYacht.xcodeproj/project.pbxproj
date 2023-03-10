@@ -20,6 +20,7 @@
 		1F9176C929524C820063330B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176C829524C820063330B /* Assets.xcassets */; };
 		1F9176CC29524C820063330B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9176CA29524C820063330B /* LaunchScreen.storyboard */; };
 		1FD0E12A29B6633600F25167 /* UIImageView + loadUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */; };
+		1FE85E8B29BB90BC00D1BA65 /* PhotoGalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE85E8A29BB90BC00D1BA65 /* PhotoGalleryCollectionView.swift */; };
 		1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F62974B736003CD08A /* YachtViewController.swift */; };
 		1FEA37F92974B76A003CD08A /* JetskiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37F82974B76A003CD08A /* JetskiViewController.swift */; };
 		1FEA37FB2974B779003CD08A /* YachtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */; };
@@ -42,6 +43,7 @@
 		1F9176CB29524C820063330B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9176CD29524C820063330B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0E12929B6633600F25167 /* UIImageView + loadUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + loadUrl.swift"; sourceTree = "<group>"; };
+		1FE85E8A29BB90BC00D1BA65 /* PhotoGalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCollectionView.swift; sourceTree = "<group>"; };
 		1FEA37F62974B736003CD08A /* YachtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtViewController.swift; sourceTree = "<group>"; };
 		1FEA37F82974B76A003CD08A /* JetskiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetskiViewController.swift; sourceTree = "<group>"; };
 		1FEA37FA2974B779003CD08A /* YachtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtDetailViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				1F68BCA92976F70700A4979C /* Jetskis.swift */,
 				1F68BCAB2976F76500A4979C /* YachtsCell.swift */,
 				1F68BCAD2976F77400A4979C /* JetskisCell.swift */,
+				1FE85E8A29BB90BC00D1BA65 /* PhotoGalleryCollectionView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				1F68BCAA2976F70700A4979C /* Jetskis.swift in Sources */,
 				1F68BCAC2976F76500A4979C /* YachtsCell.swift in Sources */,
 				1FEA37F72974B736003CD08A /* YachtViewController.swift in Sources */,
+				1FE85E8B29BB90BC00D1BA65 /* PhotoGalleryCollectionView.swift in Sources */,
 				1F68BCA82976F5B400A4979C /* Yachts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
