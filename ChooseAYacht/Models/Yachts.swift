@@ -1,5 +1,5 @@
 //
-//  YachtsAndJetskis.swift
+//  Yachts.swift
 //  ChooseAYacht
 //
 //  Created by Алина Ражева on 17.01.2023.

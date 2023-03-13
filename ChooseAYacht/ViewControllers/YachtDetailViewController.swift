@@ -1,5 +1,5 @@
 //
-//  DetailsViewController.swift
+//  YachtDetailViewController.swift
 //  ChooseAYacht
 //
 //  Created by Алина Ражева on 15.01.2023.
@@ -41,10 +41,18 @@ final class YachtDetailViewController: UIViewController, UIScrollViewDelegate {
         nameLabel.text = yacht?.name
 
         firstPriceLabel.text = yacht?.price?.first
-        //но здесь потом изменить [1]
-        secondPriceLabel.text = yacht?.price?[1]
         thirdPriceLabel.text = yacht?.price?.last
-
+        secondPriceLabel.text = yacht?.price?[1]
+        
+        /*
+        guard let number = yacht?.price else { return }
+        for index in number {
+            if index == number[1] {
+                secondPriceLabel.text = number[1]
+            } else { return }
+        }
+        */
+        
         typeOfBoatLabel.text = yacht?.typeOfBoat
         capacityLabel.text = yacht?.capacity
         featuresLabel.text = yacht?.features
@@ -64,9 +72,10 @@ extension YachtDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryYachtCell", for: indexPath) as! PhotoGalleryCollectionView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryYachtCell", for: indexPath) as! PhotoGalleryYachtsCollectionView
         
-        cell.imageView.contentMode = .scaleAspectFill
+        cell.imageView.contentMode = .scaleAspectFit
+            //.scaleAspectFill
         
         if let link = yacht?.images?[indexPath.row], let url = URL(string: link) {
             cell.imageView.load(url: url)
